@@ -1,9 +1,22 @@
-const numbers = require('./numbers')
-const strings = require('./strings')
-const dates = require('./dates')
-
+const split = (str, delim) => {
+  let test = str.split(delim);
+  return test;
+};
+const pairs = (str) => {
+  let pairs = [];
+  let arrayed = str.split('');
+    for (let i = 0; i < arrayed.length; i = i + 2){
+      pairs.push(arrayed[i].concat(arrayed[i+1]));
+    }
+  return pairs;
+}
+const reverse = (str) => {
+  let arr = str.split('');
+  let rvrsd = arr.reverse();
+  return rvrsd.join('');
+}
 module.exports = {
-  numbers,
-  strings,
-  dates
+  split,
+  pairs,
+  reverse
 }
